@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     async showSow() {
-      const consulta = await axios
+      await axios
         .get("https://back-evergreen-pro.herokuapp.com/api/siembra")
         .then(res => {
           console.log(res);
@@ -53,7 +53,7 @@ export default {
       let url = "https://back-evergreen-pro.herokuapp.com/api/siembra/" + id;
       axios
         .delete(url)
-        .then(res => console.log(rest))
+        .then(res => console.log(res))
         .catch(error => console.log(error));
       console.log("From App", url);
     }
